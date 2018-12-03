@@ -8,7 +8,7 @@ var friends = [
     // should have a name
     name: "Big Bird",
     // should have a photo
-    photo: "",
+    photo: "/images/big_birg.jpg",
     // should also have scores for each question, 10 questions in total
     score: [
         3,
@@ -24,7 +24,7 @@ var friends = [
     ]
 },{
     name: "Oscar the Grouch",
-    photo: "",
+    photo: "/images/oscar.jpg",
     score: [
        1,
        1,
@@ -39,7 +39,7 @@ var friends = [
     ]
 },{
     name: "Elmo",
-    photo: "",
+    photo: "/images/elmo.jpg",
     score: [
        5,
        5,
@@ -54,7 +54,7 @@ var friends = [
     ]
 },{
     name: "Gritty",
-    photo: "",
+    photo: "/images/gritty.jpg",
     score: [
        1,
        2,
