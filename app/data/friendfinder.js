@@ -1,6 +1,6 @@
 // Data for results
 // Default start with 4
-
+// console.log("connected");
 // want the results in an array of objects
 var friends = [
     // each object will have a friend
@@ -8,7 +8,7 @@ var friends = [
     // should have a name
     name: "Big Bird",
     // should have a photo
-    photo: "/images/big_birg.jpg",
+    photo: "../public/images/big_birg.jpg",
     // should also have scores for each question, 10 questions in total
     score: [
         3,
@@ -24,7 +24,7 @@ var friends = [
     ]
 },{
     name: "Oscar the Grouch",
-    photo: "/images/oscar.jpg",
+    photo: "../public/images/oscar.jpg",
     score: [
        1,
        1,
@@ -39,7 +39,7 @@ var friends = [
     ]
 },{
     name: "Elmo",
-    photo: "/images/elmo.jpg",
+    photo: "../public/images/elmo.jpg",
     score: [
        5,
        5,
@@ -54,7 +54,7 @@ var friends = [
     ]
 },{
     name: "Gritty",
-    photo: "/images/gritty.jpg",
+    photo: "../public/images/gritty.jpg",
     score: [
        1,
        2,
