@@ -22,7 +22,7 @@ var friends = [
         3,
         3,
         3,
-        3,
+        3
     ]
 },{
     routeName: "oscarTheGrouch",
