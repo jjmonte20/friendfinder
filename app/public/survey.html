@@ -15,10 +15,10 @@
                     <h2>About you</h2>
                     <br>
                     <h4>Name (required)</h4>
-                    <input class="form-control" type="text" placeholder="John Smith">
+                    <input class="form-control" id="name" type="text" placeholder="John Smith">
                     <!-- second for should be for photo -->
                     <h4>Photo (required)</h4>
-                    <input class="form-control" type="text" placeholder="https://via.placeholder.com/150C">
+                    <input class="form-control" id="photograph" type="text" placeholder="https://via.placeholder.com/150C">
                 </header>
                 <!-- box for questions -->
                 <br>
@@ -28,7 +28,7 @@
                     <!-- Question box is where I should put all of the information for a given question -->
                     <div class="questionbox">
                         <h4>How much do you like cookies?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question1">
                             <!-- Answers need to be catagorized from 1 through 5 -->
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -40,7 +40,7 @@
                     <!-- Will need 10 of these -->
                     <div class="questionbox">
                         <h4>How much do you like Disney Princesses?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question2">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>How much of a sports fan are you?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question3">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>What's your opinion on pinapples on pizza?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question4">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>What's your opinion on Detective Pikachu?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question5">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>Do you like Shrek?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question6">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>How good are you at saying the alphabet backwards?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question7">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>How likely are you to eat dumpster pizza?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question8">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -110,7 +110,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>How much do you like Whataburger?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question9">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="questionbox">
                         <h4>How likely are you to play the lottery?</h4>
-                        <select class="form-control form-control-sm">
+                        <select class="form-control form-control-sm" id="question10">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -130,7 +130,7 @@
                     </div>
                     <br>
                     <!-- Submit button should record the information the user has selected -->
-                    <input class="btn btn-primary" type="submit" value="Submit">
+                    <input class="btn btn-primary" id="subForm" type="submit" value="Submit">
                 </div>
             </div>
             <footer>
@@ -142,5 +142,48 @@
             </footer>
             <!-- jquery cdn -->
             <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <script type="text/javascript">
+                // need to record name, photo, and answers
+                $("#subForm").on("click", function(event) {
+                    // prevent repeats
+                    event.preventDefault();
+                    // make a new character
+                    var newCharacter = {
+                        name: $("#name").val().trim(),
+                        photo: $("#photograph").val().trim(),
+                        // need to make the answers an array
+                        score: [
+                            // the values in the dropdown options should be the answer
+                            $("#question1").val(),
+                            $("#question2").val(),
+                            $("#question3").val(),
+                            $("#question4").val(),
+                            $("#question5").val(),
+                            $("#question6").val(),
+                            $("#question7").val(),
+                            $("#question8").val(),
+                            $("#question9").val(),
+                            $("#question10").val()
+                        ]
+                    };
+                    // console.log(newCharacter);
+                    // need to add new character
+                    $.post("/api/friends", newCharacter)
+                        .then(function(data) {
+                            console.log(data);
+                        });
+                        
+                    // need script to compare user with another friend
+                    // first cycle through all of the friends
+                    for (i = 0; i < friends.length; i++) {
+                    //     // then make an empty score
+                        var total = 0;
+                        for (j = 0; j < friends.score.length;j++){
+                            total += friends.score.length;
+                        }
+                        // then run another loop for the score
+                    } 
+                });
+            </script>
         </body>
     </html>

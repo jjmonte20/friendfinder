@@ -61,15 +61,15 @@ var friends = [
     name: "Gritty",
     photo: "../public/images/gritty.jpg",
     score: [
-       1,
-       2,
        3,
-       4,
+       3,
+       3,
+       3,
+       3,
        5,
-       1,
-       2,
-       3,
-       4,
+       5,
+       5,
+       5,
        5 
     ]
 }

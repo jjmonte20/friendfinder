@@ -24,19 +24,19 @@ module.exports = function(app) {
         return res.json(false);
     });
 
-//     // needs a POST route /api/friends.  This will be used to handle incoming survey results
-//     app.post("/api/friends", function(req, res) {
-//     // start by making the body of what the user searched be the answers
-//         var newFriend = req.body;
+    // needs a POST route /api/friends.  This will be used to handle incoming survey results
+    app.post("/api/friends", function(req, res) {
+    // start by making the body of what the user searched be the answers
+        var newFriend = req.body;
 
-//         // remove the spaces in the name
-//         newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
+        // remove the spaces in the name
+        newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
 
-//         console.log(newFriend);
+        console.log(newFriend);
 
-//         friends.push(newFriend);
+        friends.push(newFriend);
 
-//         res.json(newFriend);
-// });
+        res.json(newFriend);
+});
 }
 // everything needs to be in the module.exports app
