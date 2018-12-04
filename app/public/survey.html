@@ -140,11 +140,41 @@
                     <a class="apifriendlist" href="/api/friends">API Friends List</a> | <a class="github" href="#">Github Repository</a>
                 </div>
             </footer>
+
+            <!-- need a pop up to show the best friend match
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Best Friend Match</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3 id="matchName"></h3>
+          <img id="matchPhoto">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
             <!-- jquery cdn -->
             <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
             <script type="text/javascript">
                 // need to record name, photo, and answers
                 $("#subForm").on("click", function(event) {
+
                     // prevent repeats
                     event.preventDefault();
                     // make a new character
@@ -175,15 +205,15 @@
                         
                     // need script to compare user with another friend
                     // first cycle through all of the friends
-                    for (i = 0; i < friends.length; i++) {
+                    // for (i = 0; i < friends.length; i++) {
                     //     // then make an empty score
-                        var total = 0;
-                        for (j = 0; j < friends.score.length;j++){
-                            total += friends.score.length;
-                        }
+                        // var total = 0;
+                        // for (j = 0; j < friends.score.length;j++){
+                            // total += friends.score.length;
+                        // }
                         // then run another loop for the score
                     } 
-                });
+                );
             </script>
         </body>
     </html>

@@ -3,7 +3,7 @@ const express = require("express");
 // const for app
 const app = express();
 // port I will be using, only need one server
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
