@@ -5,6 +5,8 @@
 var friends = [
     // each object will have a friend
     {
+    // giving a routename
+    routeName: "bigBird",
     // should have a name
     name: "Big Bird",
     // should have a photo
@@ -23,6 +25,7 @@ var friends = [
         3,
     ]
 },{
+    routeName: "oscarTheGrouch",
     name: "Oscar the Grouch",
     photo: "../public/images/oscar.jpg",
     score: [
@@ -38,6 +41,7 @@ var friends = [
        1 
     ]
 },{
+    routeName: "elmo",
     name: "Elmo",
     photo: "../public/images/elmo.jpg",
     score: [
@@ -53,6 +57,7 @@ var friends = [
        5 
     ]
 },{
+    routeName: "gritty",
     name: "Gritty",
     photo: "../public/images/gritty.jpg",
     score: [

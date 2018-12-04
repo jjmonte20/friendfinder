@@ -17,21 +17,6 @@ require("./app/data/friendfinder.js");
 require("./app/routing/apiRoutes.js")(app);
 require("./app/routing/htmlRoutes.js")(app);
 
-// needs a POST route /api/friends.  This will be used to handle incoming survey results
-app.post("/api/friends", function(req, res) {
-    // start by making the body of what the user searched be the answers
-    var newFriend = req.body;
-
-    // remove the spaces in the name
-    newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-
-    console.log(newFriend);
-
-    friends.push(newFriend);
-
-    res.json(newFriend);
-});
-
 app.listen(PORT, function(){
     console.log(PORT + " is connected, listening...")
 });
